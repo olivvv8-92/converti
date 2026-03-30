@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Fabrice — Fromagerie des Neiges chez Odéon</title>
+<link href="https://fonts.googleapis.com/css2?family=B612:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/cockpit.css">
+<link rel="stylesheet" href="css/panels.css">
+<link rel="stylesheet" href="css/mcdu.css">
+<link rel="stylesheet" href="css/themes.css">
+</head>
+<body>
+
+<div id="boot-screen">
+  <img id="boot-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Airbus_logo_2017.svg/512px-Airbus_logo_2017.svg.png">
+</div>
+
+<!-- Bandeau titre -->
+<div id="site-title">
+  <span class="site-title-name">Fabrice</span>
+  <span class="site-title-sep">·</span>
+  <span class="site-title-main">Fromagerie des Neiges chez Odéon</span>
+  <span class="site-title-sep">·</span>
+  <span class="site-title-sub">M.I.N. de Rungis</span>
+</div>
+
+<div id="mcdu-menu">
+  <div class="mcdu-title">MENU</div>
+  <button class="lsk" onclick="openPage('convert')">Conversions</button>
+  <button class="lsk" onclick="openPage('geometry')">Géométrie</button>
+  <button class="lsk" onclick="openPage('volumes')">Volumes</button>
+  <button class="lsk" onclick="openPage('settings')">Réglages</button>
+  <button class="lsk" onclick="openPage('about')">À propos</button>
+  <div class="mcdu-footer">A350 STYLE</div>
+</div>
+
+<div id="main-content" style="margin-left:200px; margin-top:52px;">
+
+  <section id="page-convert" class="cockpit-page"></section>
+
+  <section id="page-geometry" class="cockpit-page hidden" style="position:relative;">
+    <h1 style="position:relative;z-index:2;">Géométrie plane</h1>
+    <div id="panel-geometry" class="panel" style="position:relative;z-index:2;background:transparent;border:none;box-shadow:none;"></div>
+  </section>
+
+  <section id="page-volumes" class="cockpit-page hidden"></section>
+
+  <section id="page-settings" class="cockpit-page hidden">
+    <div class="conv-header">Réglages</div>
+    <div class="conv-grid" style="max-width:600px;margin:0 auto;">
+
+      <div class="conv-card">
+        <div class="conv-card-header">
+          <div class="conv-dot" style="background:#4fc3ff;"></div>
+          <span class="conv-label" style="color:#4fc3ff;">Thème</span>
+        </div>
+        <p class="vol-lbl" style="margin-bottom:14px;">Mode jour / nuit</p>
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span id="theme-label" style="font-family:'B612',monospace;font-size:15px;color:#7fc8ff;letter-spacing:0.12em;">Nuit</span>
+          <div class="toggle-track" id="theme-track" onclick="toggleTheme()">
+            <div class="toggle-thumb" id="theme-thumb"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="conv-card">
+        <div class="conv-card-header">
+          <div class="conv-dot" style="background:#00e676;"></div>
+          <span class="conv-label" style="color:#00e676;">Son</span>
+        </div>
+        <p class="vol-lbl" style="margin-bottom:14px;">Effets sonores</p>
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span id="sound-label" style="font-family:'B612',monospace;font-size:15px;color:#00e676;letter-spacing:0.12em;">Activé</span>
+          <div class="toggle-track toggle-on" id="sound-track" onclick="toggleSound();updateSoundToggle()">
+            <div class="toggle-thumb toggle-thumb-on" id="sound-thumb"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="page-about" class="cockpit-page hidden">
+    <h1>À propos</h1>
+    <p>Airbus Cockpit Converter<br>Projet personnalisé pour Olivier.</p>
+  </section>
+
+</div>
+
+<script src="js/sounds.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/mcdu.js"></script>
+<script src="js/conversions.js"></script>
+<script src="js/geometry.js"></script>
+<script src="js/volumes.js"></script>
+<script src="js/geo-background.js"></script>
+
+</body>
+</html>

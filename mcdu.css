@@ -1,0 +1,80 @@
+/* ---------------------------------------------------
+   MCDU MENU — Style harmonisé avec les conv-card
+--------------------------------------------------- */
+
+#mcdu-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 180px;
+    height: 100%;
+    background: #0b132b;
+    border-right: 2px solid #1e3a8a;
+    padding: 16px 12px;
+    box-shadow: 0 0 20px rgba(0,150,255,0.25);
+    z-index: 1500;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mcdu-title {
+    color: #7fc8ff;
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    font-family: "B612", monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.lsk {
+    width: 100%;
+    padding: 12px 10px;
+    background: #0d1b36;
+    border: 1px solid #1e3a8a;
+    border-radius: 12px;
+    color: #7fc8ff;
+    font-size: 13px;
+    font-family: "B612", monospace;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    text-align: center;
+    text-shadow: none;
+    animation: none;
+    box-shadow: none;
+    margin: 0;
+}
+
+.lsk:hover {
+    background: #1a2f6a;
+    border-color: #4f7cff;
+    color: #fff;
+    transform: none;
+}
+
+.lsk:active {
+    background: #4f7cff;
+    color: #000;
+    transform: scale(0.97);
+}
+
+.lsk.active {
+    background: #1e3a8a;
+    border-color: #4fc3ff;
+    color: #fff;
+}
+
+.mcdu-footer {
+    margin-top: auto;
+    text-align: center;
+    color: #2a3a6a;
+    font-size: 11px;
+    font-family: "B612", monospace;
+    letter-spacing: 0.15em;
+    padding-bottom: 8px;
+}

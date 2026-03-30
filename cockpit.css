@@ -1,0 +1,167 @@
+/* ---------------------------------------------------
+   COCKPIT GLOBAL — Fond, police, animations générales
+--------------------------------------------------- */
+
+body {
+    background:#020617;
+    color:#d9e6ff;
+    font-family:"B612", sans-serif;
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
+
+/* Scanlines cockpit */
+body::before {
+    content:"";
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    pointer-events:none;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 2px,
+        rgba(0,0,0,0.05) 3px
+    );
+    z-index:999;
+    opacity:0.25;
+}
+
+/* Boot screen Airbus */
+#boot-screen {
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:#000814;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    z-index:2000;
+    animation: bootFade 4s forwards;
+}
+
+#boot-logo {
+    width:260px;
+    opacity:0;
+    animation: logoFade 2s forwards;
+}
+
+#boot-scan {
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:4px;
+    background:linear-gradient(90deg, transparent, #4fc3ff, transparent);
+    animation: scan 2.5s ease-in-out infinite;
+    opacity:0.7;
+}
+
+@keyframes logoFade {
+    0% { opacity:0; transform:scale(0.8); }
+    60% { opacity:1; transform:scale(1); }
+    100% { opacity:1; }
+}
+
+@keyframes bootFade {
+    0% { opacity:1; }
+    80% { opacity:1; }
+    100% { opacity:0; visibility:hidden; }
+}
+
+@keyframes scan {
+    0% { top:0; }
+    100% { top:100%; }
+}
+
+/* Pages cockpit */
+.cockpit-page {
+    padding:40px;
+    animation: fadeIn 1s ease-out;
+}
+
+.hidden {
+    display:none;
+}
+
+@keyframes fadeIn {
+    from { opacity:0; transform:translateY(10px); }
+    to { opacity:1; transform:translateY(0); }
+}
+
+h1 {
+    text-align:center;
+    color:#7fc8ff;
+    letter-spacing:0.18em;
+    margin-bottom:25px;
+    text-shadow:0 0 12px #1e90ff;
+}
+
+/* ---------------------------------------------------
+   BANDEAU TITRE — Fabrice / Fromagerie des Neiges
+--------------------------------------------------- */
+
+#site-title {
+    position: fixed;
+    top: 0;
+    left: 180px;
+    right: 0;
+    height: 48px;
+    background: #06102a;
+    border-bottom: 1px solid #1e3a8a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    z-index: 1400;
+    font-family: "B612", monospace;
+    letter-spacing: 0.12em;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.site-title-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #4fc3ff;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+}
+
+.site-title-sep {
+    color: #1e3a8a;
+    font-size: 18px;
+}
+
+.site-title-main {
+    font-size: 14px;
+    font-weight: 700;
+    color: #d9e6ff;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+}
+
+.site-title-sub {
+    font-size: 11px;
+    font-weight: 400;
+    color: #4a6a9a;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+/* Mode jour */
+.day-mode #site-title {
+    background: #b0cce8;
+    border-bottom-color: #6a9fd8;
+}
+
+.day-mode .site-title-name  { color: #0a2a6a; }
+.day-mode .site-title-main  { color: #0a1a3a; }
+.day-mode .site-title-sub   { color: #3a6a9a; }
+.day-mode .site-title-sep   { color: #6a9fd8; }
+
+/* Menu aligné sous le bandeau */
+#mcdu-menu {
+    top: 48px !important;
+    height: calc(100% - 48px) !important;
+}

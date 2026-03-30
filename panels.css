@@ -1,0 +1,309 @@
+/* ---------------------------------------------------
+   PANELS — Style cockpit unifié
+--------------------------------------------------- */
+
+/* ── Layout pages ── */
+#page-convert,
+#page-geometry,
+#page-volumes,
+#page-settings,
+#page-about {
+    padding: 32px 24px;
+    position: relative;
+    min-height: 100vh;
+    z-index: 2;
+}
+
+/* ── Titre de section ── */
+.conv-header {
+    text-align: center;
+    letter-spacing: 0.22em;
+    font-size: 12px;
+    font-weight: 700;
+    color: #4a6a9a;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: "B612", monospace;
+}
+
+/* ── Grille de cartes ── */
+.conv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 16px;
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* ── Carte : style UNIQUE pour tout le site ── */
+.conv-card {
+    background: rgba(10, 20, 50, 0.82);
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    border: 1px solid #1e3a8a;
+    padding: 18px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.conv-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #1a2a5a;
+}
+
+/* ── Pastille couleur (indicateur catégorie) ── */
+.conv-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* ── Label titre carte ── */
+.conv-label {
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "B612", monospace;
+    color: #7fc8ff;
+}
+
+/* ── Inputs ── */
+.conv-input {
+    flex: 1;
+    padding: 9px 12px;
+    border-radius: 8px;
+    border: 1px solid #1e3a8a;
+    background: #060e20;
+    color: #d9e6ff;
+    font-family: "B612", monospace;
+    font-size: 15px;
+    outline: none;
+    min-width: 0;
+    width: 100%;
+    transition: border-color 0.15s;
+}
+
+.conv-input:focus { border-color: #4f7cff; }
+
+/* ── Selects ── */
+.conv-select {
+    padding: 9px 8px;
+    border-radius: 8px;
+    border: 1px solid #1e3a8a;
+    background: #060e20;
+    color: #d9e6ff;
+    font-family: "B612", monospace;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.conv-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.conv-arrow {
+    font-size: 14px;
+    color: #2a4a7a;
+    flex-shrink: 0;
+}
+
+/* ── Bouton UNIQUE pour tout le site ── */
+.conv-btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid #1e3a8a;
+    color: #7fc8ff;
+    font-family: "B612", monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.15s, border-color 0.15s, transform 0.08s;
+    font-weight: 700;
+}
+
+.conv-btn:hover {
+    background: #1a2f6a;
+    border-color: #4f7cff;
+    color: #fff;
+}
+
+.conv-btn:active { transform: scale(0.97); }
+
+/* ── Résultat UNIQUE pour tout le site ── */
+.conv-result {
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: #040c1e;
+    border: 1px solid #1a2a5a;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    min-height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "B612", monospace;
+    color: #7fc8ff;
+    line-height: 1.7;
+}
+
+.conv-result b { color: #4fc3ff; font-size: 16px; }
+
+/* ── Pastilles couleur catégories (juste les dots) ── */
+.dot-len  { background: #378ADD; }
+.dot-wt   { background: #1D9E75; }
+.dot-vol  { background: #D4537E; }
+.dot-spd  { background: #BA7517; }
+
+/* ── Labels colorés (juste le texte du titre) ── */
+.lbl-len  { color: #4fc3ff; }
+.lbl-wt   { color: #00e676; }
+.lbl-vol  { color: #ff80ab; }
+.lbl-spd  { color: #ffcc80; }
+
+/* ── Formulaires volumes/géométrie ── */
+.vol-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.vol-lbl {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #3a5a8a;
+    font-family: "B612", monospace;
+    margin-top: 4px;
+}
+
+/* ── Formule mathématique ── */
+.geo-formula {
+    font-family: "B612", monospace;
+    font-size: 11px;
+    color: #2a4a7a;
+    letter-spacing: 0.06em;
+    margin-bottom: 14px;
+    padding: 6px 10px;
+    background: #040c1e;
+    border-radius: 6px;
+    border-left: 2px solid #1e3a8a;
+}
+
+/* ── Canvas pages ── */
+#page-geometry { z-index: 0; }
+#panel-geometry { position: relative; z-index: 2; }
+#page-geometry h1 { position: relative; z-index: 2; }
+
+/* ── Toggles Settings ── */
+.toggle-track {
+    width: 52px;
+    height: 28px;
+    border-radius: 14px;
+    background: #040c1e;
+    border: 1px solid #1e3a8a;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.25s, border-color 0.25s;
+    flex-shrink: 0;
+}
+
+.toggle-on {
+    background: #03200e;
+    border-color: #00e676;
+}
+
+.toggle-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #1e3a8a;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    transition: transform 0.25s, background 0.25s;
+}
+
+.toggle-thumb-on {
+    background: #00e676;
+    transform: translateX(24px);
+    box-shadow: 0 0 8px #00e676;
+}
+
+/* ── LED ── */
+.led {
+    width: 10px; height: 10px;
+    background: #00eaff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00eaff;
+    animation: ledBlink 1.2s infinite;
+}
+
+@keyframes ledBlink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.2; }
+}
+
+/* ---------------------------------------------------
+   MODE JOUR — surcharges harmonisées
+--------------------------------------------------- */
+.day-mode .conv-card {
+    background: rgba(200, 225, 248, 0.88);
+    border-color: #6a9fd8;
+}
+
+.day-mode .conv-card-header {
+    border-bottom-color: #a0c4e8;
+}
+
+.day-mode .conv-label { color: #0a2a5a; }
+.day-mode .conv-input,
+.day-mode .conv-select {
+    background: #daeaf8;
+    border-color: #6a9fd8;
+    color: #0a1a3a;
+}
+
+.day-mode .conv-btn {
+    border-color: #6a9fd8;
+    color: #0a2a5a;
+}
+
+.day-mode .conv-btn:hover {
+    background: #b8d8f0;
+    border-color: #3a7abf;
+}
+
+.day-mode .conv-result {
+    background: #c8ddf5;
+    border-color: #6a9fd8;
+    color: #0a2a5a;
+}
+
+.day-mode .conv-result b { color: #0a4a8a; }
+.day-mode .geo-formula {
+    background: #c0d8f0;
+    border-color: #6a9fd8;
+    color: #0a2a5a;
+}
+
+.day-mode .conv-header { color: #0a3a7a; }
+.day-mode .vol-lbl { color: #2a5a8a; }

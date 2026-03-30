@@ -1,0 +1,77 @@
+/* ---------------------------------------------------
+   THEMES — Jour (bleu clair) / Nuit
+--------------------------------------------------- */
+
+.night-mode {
+    background: #020617;
+    color: #d9e6ff;
+}
+
+/* ── MODE JOUR : bleu clair ── */
+.day-mode {
+    background: #c8ddf5;
+    color: #0a1a3a;
+}
+
+.day-mode #mcdu-menu {
+    background: #b0cce8;
+    border-color: #6a9fd8;
+}
+
+.day-mode .lsk {
+    background: #d8eaf8;
+    border-color: #6a9fd8;
+    color: #0a2a5a;
+}
+
+.day-mode .lsk:hover {
+    background: #b8d8f0;
+}
+
+.day-mode .conv-card {
+    background: #d8eaf8;
+    border-color: #6a9fd8;
+}
+
+.day-mode .conv-header {
+    color: #0a2a5a;
+}
+
+.day-mode .conv-label { filter: brightness(0.7); }
+
+.day-mode .conv-input,
+.day-mode .conv-select {
+    background: #c0d8f0;
+    border-color: #6a9fd8;
+    color: #0a1a3a;
+}
+
+.day-mode .conv-btn {
+    filter: brightness(0.85);
+}
+
+.day-mode .conv-result {
+    filter: brightness(0.9);
+}
+
+.day-mode .geo-formula {
+    background: #c0d8f0;
+    border-color: #6a9fd8;
+    color: #0a2a5a;
+}
+
+.day-mode .vol-lbl {
+    color: #2a5a8a;
+}
+
+.day-mode h1 {
+    color: #0a2a5a;
+    text-shadow: none;
+}
+
+/* Canvas animations : on force fond semi-transparent bleu en mode jour */
+.day-mode #geo-canvas,
+.day-mode #convert-canvas,
+.day-mode #volumes-canvas {
+    opacity: 0.7;
+}
